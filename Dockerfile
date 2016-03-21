@@ -2,8 +2,8 @@
 FROM ubuntu:14.04
 MAINTAINER zhanglx3@asiainfo.com
 #RUN apk add --update golang && rm -fr /var/cache/apk/*
-RUN apt-get install golang -y
+RUN apt-get update && apt-get install golang git -y
 RUN mkdir /app
-RUN export GOPATH=$GOPATH:/app GOBIN=$GOBIN:/usr/bin
+ENV GOPATH=/app GOBIN=/usr/bin
 
 
